@@ -1,0 +1,65 @@
+{
+    "name": "csainterruptionsbot",
+    "description": "",
+    "services": [
+        {
+            "type": "abs",
+            "id": "3",
+            "name": "csainterruptionsbot",
+            "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "subscriptionId": "6c59fd5f-9a1a-455e-a2d3-16fff41ae6e1",
+            "resourceGroup": "csainterruptionsbot",
+            "serviceName": "csainterruptionsbot",
+            "appId": "fbb38e06-f20a-4bf1-9225-eb104e00b3ab"
+        },
+        {
+            "type": "endpoint",
+            "id": "90",
+            "name": "development",
+            "appId": "fbb38e06-f20a-4bf1-9225-eb104e00b3ab",
+            "appPassword": "2nXfrGNacax/tQudD8vIYg==!dO79m3D75tOT2IS7ra9H6KERRzMyQIqQDB8nRSbP/2g=",
+            "endpoint": "http://localhost:3978/api/messages"
+        },
+        {
+            "type": "endpoint",
+            "id": "2",
+            "name": "production",
+            "appId": "fbb38e06-f20a-4bf1-9225-eb104e00b3ab",
+            "appPassword": "ITu6wxgQKJqotvaIEhTe4A==!oCE35kxq9P4uIG5LfLkg2166NLLcFCtj5CqBj2GP1js=",
+            "endpoint": "https://csainterruptiondwzs.azurewebsites.net/api/messages"
+        },
+        {
+            "type": "endpoint",
+            "name": "production",
+            "appId": "fbb38e06-f20a-4bf1-9225-eb104e00b3ab",
+            "appPassword": "Kv0Uw7zEg9epWSGzE5qg5w==!hmdbw8DEBd/gkoz71qyMULDLwcawNUSW7+5zqCW320I=",
+            "endpoint": "https://csainterruptiondwzs.azurewebsites.net/api/messages",
+            "id": "95"
+        },
+        {
+            "type": "appInsights",
+            "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "subscriptionId": "6c59fd5f-9a1a-455e-a2d3-16fff41ae6e1",
+            "resourceGroup": "csainterruptionsbot",
+            "name": "csainterruptionsbot7dk4tw",
+            "serviceName": "csainterruptionsbot7dk4tw",
+            "instrumentationKey": "zx57zRwceDaDVxTJI4KdUw==!24x2Vc6FDs6SDeNSeHLko74UwEtVQWJFkk7VVg9Kack1WNXpnP6sNIIqZJNMpIMk",
+            "applicationId": "883a4b60-5fb4-441d-bb35-d8ecdd363abd",
+            "apiKeys": {},
+            "id": "103"
+        },
+        {
+            "type": "blob",
+            "name": "csainterruq8oo",
+            "serviceName": "csainterruq8oo",
+            "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "subscriptionId": "6c59fd5f-9a1a-455e-a2d3-16fff41ae6e1",
+            "resourceGroup": "csainterruptionsbot",
+            "connectionString": "KbQMpfc8OwQDXRzDeSKCMA==!Ii1Ws/ucHYl6U10/ubNrnkz7PQnE9nn4MNDXCTyLUqFX8xwXSrj1Ji9CO5fnGKncl2oEhb5HiLgyEAyEv977EbEjWmw7RtgcgvEUPIGv8qt/PXii6M+1jDUOaftnT6vsJztGgiFhnwgnGahfsHro/LeP68z14eixW479nLiY2/ESIonoY51/Xzc5jj9d5Ss0fAcyyNJxdErbndHBbVEtjk4to2kciWlWDjTUM4eMe5Ys4AUuuOh5o5DOpxSh8m79",
+            "container": null,
+            "id": "15"
+        }
+    ],
+    "padlock": "Srw9ESevtZfYfjRTt+ss+w==!+nnqjUqr3fd22jR+vmfopLUAhFeEYCmv7qmyUtunB+F4Q/QEB61LCPyGyopZOkEw",
+    "version": "2.0"
+}

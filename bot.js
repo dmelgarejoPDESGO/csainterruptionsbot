@@ -15,18 +15,18 @@ const CHOICE_PROMPT = 'choicePrompt';
 
 // The options on the dinner menu, including commands for the bot.
 const dinnerMenu = {
-    choices: ["Ensalada de Papa - $5.99", "Sandwich de Atun - $6.89", "Sopa de Almejas - $4.50",
-        "Process order", "Cancel", "More info", "Help"],
-    "Potato Salad - $5.99": {
-        description: "Potato Salad",
+    choices: ["Ensalada de Papas - $5.99", "Sandwich de Atun - $6.89", "Sopa de Almejas - $4.50",
+        "Procesar orden", "Cancel", "Mas info", "Ayuda"],
+    "Ensalada de Papas - $5.99": {
+        description: "Ensalada de Papas",
         price: 5.99
     },
-    "Tuna Sandwich - $6.89": {
-        description: "Tuna Sandwich",
+    "Sandwich de Atun - $6.89": {
+        description: "Sandwich de Atun",
         price: 6.89
     },
-    "Clam Chowder - $4.50": {
-        description: "Clam Chowder",
+    "Sopa de Almejas - $4.50": {
+        description: "Sopa de Almejas",
         price: 4.50
     }
 }
@@ -54,36 +54,36 @@ class MyBot {
                             total: 0
                         };
                     }
-                    return await step.prompt(CHOICE_PROMPT, "What would you like?", dinnerMenu.choices);
+                    return await step.prompt(CHOICE_PROMPT, "Que desea ordenar?", dinnerMenu.choices);
                 },
                 async (step) => {
                     const choice = step.result;
-                    if (choice.value.match(/process order/ig)) {
+                    if (choice.value.match(/procesar orden/ig)) {
                         if (step.values.orderCart.orders.length > 0) {
                             // If the cart is not empty, process the order by returning the order to the parent context.
-                            await step.context.sendActivity("Your order has been processed.");
+                            await step.context.sendActivity("Su orden ha sido procesada.");
                             return await step.endDialog(step.values.orderCart);
                         } else {
                             // Otherwise, prompt again.
-                            await step.context.sendActivity("Your cart was empty. Please add at least one item to the cart.");
+                            await step.context.sendActivity("Orden de pedido vacía. Por favor agregue elementos a la orden.");
                             return await step.replaceDialog(ORDER_PROMPT);
                         }
                     } else if (choice.value.match(/cancel/ig)) {
                         // Cancel the order, and return "cancel" to the parent context.
-                        await step.context.sendActivity("Your order has been canceled.");
+                        await step.context.sendActivity("Su orden ha sido cancelada.");
                         return await step.endDialog("cancelled");
-                    } else if (choice.value.match(/more info/ig)) {
+                    } else if (choice.value.match(/mas info/ig)) {
                         // Provide more information, and then continue the ordering process.
-                        var msg = "More info: <br/>Potato Salad: contains 330 calories per serving. <br/>"
-                            + "Tuna Sandwich: contains 700 calories per serving. <br/>"
-                            + "Clam Chowder: contains 650 calories per serving."
+                        var msg = "Mas info: <br/>Ensalada de Papas: contiene 330 calorías por porción. <br/>"
+                            + "Sandwich de Atún: contiene 700 calorías por porción. <br/>"
+                            + "Sopa de Almejas: contiene 650 calorías por porción."
                         await step.context.sendActivity(msg);
                         return await step.replaceDialog(ORDER_PROMPT, step.values.orderCart);
-                    } else if (choice.value.match(/help/ig)) {
+                    } else if (choice.value.match(/ayuda/ig)) {
                         // Provide help information, and then continue the ordering process.
-                        var msg = `Help: <br/>`
-                            + `To make an order, add as many items to your cart as you like then choose `
-                            + `the "Process order" option to check out.`
+                        var msg = `Ayuda: <br/>`
+                            + `Para realizar una orden, agregue items al pedido y luego seleccione `
+                            + `la opción "Procesar orden" para terminar.`
                         await step.context.sendActivity(msg);
                         return await step.replaceDialog(ORDER_PROMPT, step.values.orderCart);
                     } else {
@@ -92,8 +92,8 @@ class MyBot {
                         step.values.orderCart.orders.push(item.description);
                         step.values.orderCart.total += item.price;
     
-                        await step.context.sendActivity(`Added ${item.description} to your cart. <br/>`
-                            + `Current total: $${step.values.orderCart.total}`);
+                        await step.context.sendActivity(`Agregada ${item.description} al pedido. <br/>`
+                            + `Total: $${step.values.orderCart.total}`);
     
                         // Continue the ordering process.
                         return await step.replaceDialog(ORDER_PROMPT, step.values.orderCart);

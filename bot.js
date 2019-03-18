@@ -114,20 +114,20 @@ class MyBot {
                 // The dialog completed this turn.
                 const result = dialogTurnResult.result;
                 if (!result || result === "cancelled") {
-                    await turnContext.sendActivity('You cancelled your order.');
+                    await turnContext.sendActivity('Su orden ha sido cancelada.');
                 } else {
-                    await turnContext.sendActivity(`Your order came to $${result.total}`);
+                    await turnContext.sendActivity(`El total de su orden es de $${result.total}`);
                 }
             } else if (!turnContext.responded) {
                 // No dialog was active.
-                await turnContext.sendActivity("Let's order dinner...");
+                await turnContext.sendActivity("Listo para tomar su orden...");
                 await dc.cancelAllDialogs();
                 await dc.beginDialog(ORDER_PROMPT);
             } else {
                 // The dialog is active.
             }
         } else {
-            await turnContext.sendActivity(`[${turnContext.activity.type} event detected]`);
+            //await turnContext.sendActivity(`[${turnContext.activity.type} event detected]`);
         }
         // Save state changes
         await this.conversationState.saveChanges(turnContext);

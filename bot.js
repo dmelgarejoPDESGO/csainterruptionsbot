@@ -15,7 +15,7 @@ const CHOICE_PROMPT = 'choicePrompt';
 
 // The options on the dinner menu, including commands for the bot.
 const dinnerMenu = {
-    choices: ["Potato Salad - $5.99", "Tuna Sandwich - $6.89", "Clam Chowder - $4.50",
+    choices: ["Ensalada de Papa - $5.99", "Sandwich de Atun - $6.89", "Sopa de Almejas - $4.50",
         "Process order", "Cancel", "More info", "Help"],
     "Potato Salad - $5.99": {
         description: "Potato Salad",
